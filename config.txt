@@ -2,3 +2,7 @@
 #Configure file with all necessary variables and configurations for script run well#
 ####################################################################################
 
+lat_degrees = 32.648673
+lon_degrees = -16.937849
+
+name = "MONT"                           #study and loaded file name

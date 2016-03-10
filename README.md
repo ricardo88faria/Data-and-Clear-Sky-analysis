@@ -10,7 +10,7 @@ Measured data analysis and treatment, also calculates de clear sky index and sun
 **High quality graphics**
 
 * Global horizontal radiation
-![alt text](github/rad_PECF.png)
+![alt text](github/rad_MONT.png)
 
 
 ## Usage:

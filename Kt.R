@@ -19,9 +19,10 @@ print("Programado por Ricardo Faria")
 #####################################
 
 system("mkdir output")
+source("config.txt")
 
 #rececao do ficheiro(dados):
-file_data <- Sys.glob(paste0("input/data/*MONT*"))
+file_data <- Sys.glob(paste0(paste0("input/data/*", name,"*")))
 
 dados <- read.csv(file_data[1],
                   skip = 0,
@@ -96,9 +97,8 @@ Gh = dados$rad
 
 #lat em rad:
 #Degrees <- readline(prompt = "Indicar a latitude em Graus Decimais: ")
-lat_degrees = 32.648673
 lat = lat_degrees*(pi/180)
-lon_degrees = -16.937849
+
 
 #I0 = extraterrestrial radiation constante solar (W/m^2) usar package sirad funcao extraT
 I0jd = extrat(D_Juliano, lat)
@@ -142,9 +142,9 @@ dados$kt[dados$kt >= 1] = 1
 dados_ano <- aggregate(dados[,c(2,5,6,7)], by=list(dados$D_Juliano), FUN=mean, na.rm=TRUE, na.action=NULL)
 names(dados_ano) <- c("Dia", names(dados_ano[2:length(dados_ano)]))
 
-write.table(dados_ano, file = "output/rad_PECF.csv", row.names = F, sep = ";")
+write.table(dados_ano, file = paste0("output/rad_", name,".csv"), row.names = F, sep = ";")
 
-png("output/rad_PECF.png", width = 6950, height = 4500, units = "px", res = 500)
+png(paste0("output/rad_", name,".png"), width = 6950, height = 4500, units = "px", res = 500)
 
 par(mfrow = c(2, 2))
 

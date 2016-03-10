@@ -18,6 +18,8 @@ cat("\014")
 print("Programado por Ricardo Faria")
 #####################################
 
+system("mkdir output")
+
 #rececao do ficheiro(dados):
 file_data <- Sys.glob(paste0("input/data/*MONT*"))
 
@@ -140,9 +142,9 @@ dados$kt[dados$kt >= 1] = 1
 dados_ano <- aggregate(dados[,c(2,5,6,7)], by=list(dados$D_Juliano), FUN=mean, na.rm=TRUE, na.action=NULL)
 names(dados_ano) <- c("Dia", names(dados_ano[2:length(dados_ano)]))
 
-write.table(dados_ano, file = "rad_PECF.csv", row.names = F, sep = ";")
+write.table(dados_ano, file = "output/rad_PECF.csv", row.names = F, sep = ";")
 
-png("rad_PECF.png", width = 6950, height = 4500, units = "px", res = 500)
+png("output/rad_PECF.png", width = 6950, height = 4500, units = "px", res = 500)
 
 par(mfrow = c(2, 2))
 

@@ -148,9 +148,9 @@ png(paste0("output/rad_", name,".png"), width = 6950, height = 4500, units = "px
 
 par(mfrow = c(2, 2))
 
-plot(x = dados_ano$Dia, y = dados_ano$Rad_extat_h, ylim = range(c(0,500)), grid(), col ="blue",  pch = 16, lwd = 2, xlab = "Dia do ano", ylab = "Rad [w/m^2]", main = "Rad. extraterrestre vs medida", xaxt="n")#, yaxt="n")
+plot(x = dados_ano$Dia, y = dados_ano$Rad_extat_h, ylim = range(c(0,500)), grid(), col ="blue", pch = 16, lwd = 2, xlab = "Dia do ano", ylab = "Rad [w/m^2]", main = "Rad. extraterrestre vs medida", xaxt="n")#, yaxt="n")
 axis(1, at = seq(1,366,7))
-points(x = dados_ano$Dia, y = dados_ano$rad, col ="red",  type = "h", lwd = 2)
+points(x = dados_ano$Dia, y = dados_ano$rad, col ="red", type = "h", lwd = 2)
 #axis(2, at = seq(round(min(dados_ano$rad), digits = -1), round(max(dados_ano$Rad_extat_h), digits = -1), by = 50))
 
 plot(x = dados_ano$Dia, y = dados_ano$rad, grid(), col ="red", type = "p", lwd = 2, xlab = "Dia do ano", ylab = "Rad [w/m^2]", main = "Rad. medida", xaxt="n")
@@ -166,3 +166,5 @@ axis(1, at = seq(1,366,7))
 dev.off()
 
 plot(x = dados$ang_solar, y = dados$kt, col = ifelse(dados$kt > 0.5, "blue", "gray"), type = "p", lwd = 0.5, xlab = "altura solar", ylab = "kt []", main = "Altura solar VS kt")
+
+plot(x = dados$Data, y = dados$rad, grid(), col = ifelse(dados$kt > 0.5, "blue", "gray"), type = "h", lwd = 0.2, xlab = "tempo", ylab = "Rad [w/m^2]", main = "Valores de radiacao medidos")

@@ -1,5 +1,5 @@
 # ReSun & WRF output analysis
-Measured data analysis and treatment, also calculates de clear sky index and sun angle
+ReSun tests analysis
 
 **To implement:**
 
@@ -7,11 +7,7 @@ Measured data analysis and treatment, also calculates de clear sky index and sun
 
 ## Results:
 
-**High quality graphics**
-
-* Year mean analysis
-![alt text](github/rad_MONT.png)
-
+to complete
 
 ## Usage:
 

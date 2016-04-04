@@ -22,7 +22,7 @@ system("mkdir output")
 source("config.txt")
 
 #rececao do ficheiro(dados):
-file_data <- Sys.glob(paste0(paste0("input/data/*", name,"*")))
+file_data <- Sys.glob(paste0("input/data/*", name,"*"))
 
 dados <- read.csv(file_data[1],
                   skip = 0,
